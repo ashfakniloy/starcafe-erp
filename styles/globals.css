@@ -1,4 +1,39 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply p-0 m-0 font-Montserrat bg-custom-gray text-custom-gray2;
+  }
+
+  .form {
+    @apply pt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-sm gap-x-8 gap-y-5 md:gap-y-7;
+  }
+
+  .submit_button {
+    @apply mt-8 px-9 py-4 text-white text-xs tracking-widest font-bold rounded bg-custom-blue5 hover:bg-custom-blue active:scale-95 transition duration-300 uppercase;
+  }
+
+  /* chrome */
+  .sidebar::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  /* firefox */
+  @supports (scrollbar-color: grey transparent) {
+    /* * {
+      scrollbar-color: grey transparent;
+      scrollbar-width: thin;
+    } */
+    .sidebar {
+      scrollbar-width: none;
+    }
+  }
+}
+
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -23,4 +58,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */
