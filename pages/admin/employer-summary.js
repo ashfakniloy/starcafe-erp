@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function EmployerSummaryPage() {
-  return (
-    <Layout>
-      <div className="">EmployerSummaryPage</div>
-    </Layout>
-  );
+  return <div className="">EmployerSummaryPage</div>;
 }
 
 export default EmployerSummaryPage;

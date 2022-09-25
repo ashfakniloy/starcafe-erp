@@ -7,23 +7,27 @@ import PageHeading from "./PageHeading";
 function Layout({ children, heading }) {
   const [showMenu, setShowMenu] = useState(true);
 
-  const router = useRouter();
+  const { pathname } = useRouter();
 
-  return (
-    <div className="flex">
-      <Sidebar showMenu={showMenu} setShowMenu={setShowMenu} />
+  if (pathname.includes("/admin")) {
+    return (
+      <div className="flex">
+        <Sidebar showMenu={showMenu} setShowMenu={setShowMenu} />
 
-      <div className="flex-1">
-        <Header />
+        <div className="flex-1">
+          <Header />
 
-        <div className="p-7">
-          <PageHeading />
+          <div className="p-7">
+            <PageHeading />
 
-          {children}
+            {children}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <>{children}</>;
 }
 
 export default Layout;

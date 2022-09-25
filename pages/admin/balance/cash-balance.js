@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../../components/Layout";
-
 function CashBalancePage() {
-  return (
-    <Layout>
-      <div className="">CashBalancePage</div>
-    </Layout>
-  );
+  return <div className="">CashBalancePage</div>;
 }
 
 export default CashBalancePage;

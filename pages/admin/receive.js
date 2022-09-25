@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function ReceivePage() {
-  return (
-    <Layout>
-      <div className="">ReceivePage</div>
-    </Layout>
-  );
+  return <div className="">ReceivePage</div>;
 }
 
 export default ReceivePage;

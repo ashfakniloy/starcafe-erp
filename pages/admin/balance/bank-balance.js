@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../../components/Layout";
-
 function BankBalancePage() {
-  return (
-    <Layout>
-      <div className="">BankBalancePage</div>
-    </Layout>
-  );
+  return <div className="">BankBalancePage</div>;
 }
 
 export default BankBalancePage;

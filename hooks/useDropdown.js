@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
 function useDropdown() {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState("");
   const node = useRef(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function useDropdown() {
   }, []);
 
   const clickOutside = (e) => {
-    if (node.current.contains(e.target)) {
+    if (node?.current?.contains(e.target)) {
       return;
     }
     setShowDropdown(false);

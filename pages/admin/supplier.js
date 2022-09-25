@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function SupplierPage() {
-  return (
-    <Layout>
-      <div className="">SupplierPage</div>
-    </Layout>
-  );
+  return <div className="">SupplierPage</div>;
 }
 
 export default SupplierPage;

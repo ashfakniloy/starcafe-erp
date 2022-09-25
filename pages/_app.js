@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Layout from "../components/Layout";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }) {
         <meta name="keywords" content="star cafe" />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

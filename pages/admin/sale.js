@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function SalePage() {
-  return (
-    <Layout>
-      <div className="">SalePage</div>
-    </Layout>
-  );
+  return <div className="">SalePage</div>;
 }
 
 export default SalePage;

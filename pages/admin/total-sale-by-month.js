@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function TotalSaleByMonthPage() {
-  return (
-    <Layout>
-      <div className="">TotalSaleByMonthPage</div>
-    </Layout>
-  );
+  return <div className="">TotalSaleByMonthPage</div>;
 }
 
 export default TotalSaleByMonthPage;

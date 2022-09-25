@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function PaymentPage() {
-  return (
-    <Layout>
-      <div className="">PaymentPage</div>
-    </Layout>
-  );
+  return <div className="">PaymentPage</div>;
 }
 
 export default PaymentPage;

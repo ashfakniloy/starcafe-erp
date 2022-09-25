@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../../components/Layout";
-
 function StockValuePage() {
-  return (
-    <Layout>
-      <div className="">StockValuePage</div>
-    </Layout>
-  );
+  return <div className="">StockValuePage</div>;
 }
 
 export default StockValuePage;

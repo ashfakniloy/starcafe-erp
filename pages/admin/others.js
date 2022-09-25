@@ -1,12 +1,5 @@
-import React from "react";
-import Layout from "../../components/Layout";
-
 function OthersPage() {
-  return (
-    <Layout>
-      <div className="">OthersPage</div>
-    </Layout>
-  );
+  return <div className="">OthersPage</div>;
 }
 
 export default OthersPage;
