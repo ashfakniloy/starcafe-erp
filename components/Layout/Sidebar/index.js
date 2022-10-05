@@ -19,7 +19,7 @@ function Sidebar({ showMenu, setShowMenu, name }) {
     //   }`}
     // >
     <div
-      className={`h-screen bg-custom-blue z-10 duration-300 top-0 bottom-0 sticky sidebar overflow-y-scroll   text-white w-[264px]
+      className={`h-screen bg-custom-blue z-10 duration-300 top-0 bottom-0 sticky sidebar overflow-y-scroll text-white w-[264px]
       `}
     >
       <div className="  items-center gap-10">

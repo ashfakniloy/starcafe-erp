@@ -23,6 +23,7 @@ import { MdOutlineClose } from "react-icons/md";
 // import MOCK_DATA from "./data.json";
 import { GlobalFilter } from "./GlobalFilter";
 import useDropdown from "../../hooks/useDropdown";
+import TableMenu from "./TableMenu";
 // import { ColumnFilter } from "./ColumnFilter";
 // import { Checkbox } from "./Checkbox";
 
@@ -113,12 +114,9 @@ function Table({ columnsHeading, usersData }) {
   // console.log(pageIndex + 1);
 
   return (
-    <div className="">
+    <div className="flex flex-col items-stretch">
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-      <table
-        {...getTableProps()}
-        className="table-auto  text-xs lg:text-base min-w-[1500px]"
-      >
+      <table {...getTableProps()} className="table-auto  text-xs lg:text-base">
         <thead className="bg-custom-blue3">
           {headerGroups.map((headerGroup, i) => (
             <tr key={i} {...headerGroup.getHeaderGroupProps()}>
@@ -159,7 +157,9 @@ function Table({ columnsHeading, usersData }) {
               <tr
                 key={i}
                 {...row.getRowProps()}
-                className="hover:shadow transition duration-200"
+                className={`hover:shadow transition duration-200 ${
+                  active === i && "shadow bg-slate-100"
+                }`}
               >
                 {row.cells.map((cell, i) => {
                   return (
@@ -173,10 +173,10 @@ function Table({ columnsHeading, usersData }) {
                   );
                 })}
 
-                <td className="relative cursor-pointer">
+                <td className="cursor-pointer">
                   {active !== i && (
                     <div
-                      className={`px-2 py-3 border border-white text-lg  text-custom-gray3 bg-white ${
+                      className={`px-2 py-[11px] border border-white text-lg  text-custom-gray3 bg-white ${
                         active === i && "text-indigo-500 bg-slate-100"
                       }`}
                       onClick={() => showMenu(i)}
@@ -186,7 +186,36 @@ function Table({ columnsHeading, usersData }) {
                   )}
                   {active === i && (
                     <div
-                      className={`px-2 py-3 border border-white text-lg  text-custom-gray3 bg-white ${
+                      className={`px-2 py-[11px] border border-white text-lg  text-custom-gray3 bg-white ${
+                        active === i && "text-indigo-500 bg-slate-100"
+                      }`}
+                      // onClick={() => showMenu(i)}
+                    >
+                      <BsThreeDots />
+                    </div>
+                  )}
+                  <TableMenu
+                    i={i}
+                    active={active}
+                    setActive={setActive}
+                    node={node}
+                  />
+                </td>
+
+                {/* <td className="cursor-pointer w-[10px]">
+                  {active !== i && (
+                    <div
+                      className={`px-2 py-[11px] border border-white text-lg  text-custom-gray3 bg-white ${
+                        active === i && "text-indigo-500 bg-slate-100"
+                      }`}
+                      onClick={() => showMenu(i)}
+                    >
+                      <BsThreeDots />
+                    </div>
+                  )}
+                  {active === i && (
+                    <div
+                      className={`px-2 py-[11px] border border-white text-lg  text-custom-gray3 bg-white ${
                         active === i && "text-indigo-500 bg-slate-100"
                       }`}
                       // onClick={() => showMenu(i)}
@@ -198,7 +227,7 @@ function Table({ columnsHeading, usersData }) {
                   {active === i && (
                     <div
                       ref={node}
-                      className="absolute py-2 right-0 z-20 min-w-[130px] bg-white text-custom-gray3 font-semibold cursor-pointer shadow  border text-sm"
+                      className="absolute py-2 right-[70px] z-20 min-w-[130px] bg-white text-custom-gray3 font-semibold cursor-pointer shadow  border text-sm"
                     >
                       <div
                         className="px-5 py-2 hover:bg-slate-100 hover:text-indigo-500 transition duration-300 flex items-center gap-2"
@@ -214,7 +243,7 @@ function Table({ columnsHeading, usersData }) {
                       </div>
                     </div>
                   )}
-                </td>
+                </td> */}
               </tr>
             );
           })}

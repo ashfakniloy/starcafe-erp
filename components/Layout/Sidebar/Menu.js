@@ -4,6 +4,7 @@ import SubMenu from "./SubMenu";
 import { useRouter } from "next/router";
 import { FaAngleRight, FaAngleDown, FaUserCircle } from "react-icons/fa";
 import { AiOutlineCaretRight } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 function Menu({ showMenu, setShowMenu, active, setActive, navLink }) {
   const router = useRouter();
@@ -15,8 +16,6 @@ function Menu({ showMenu, setShowMenu, active, setActive, navLink }) {
 
   //   setActive(index);
   // };
-
-  console.log(active);
 
   const activeClass = (path) => {
     // router.pathname === path

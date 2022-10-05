@@ -1,21 +1,30 @@
-import { useState } from "react";
 import { machinesData } from "../../components/data/machinesData";
 import MachineForm from "../../components/Form/MachineForm";
 import Table from "../../components/Table";
 import { machinesColumn } from "../../components/Table/columns/machines";
+import Tabs from "../../components/Tabs";
 
 function MachinePage() {
-  const [toggleState, setToggleState] = useState(0);
+  const table = (
+    <Table columnsHeading={machinesColumn} usersData={machinesData} />
+  );
+  const form = <MachineForm />;
 
-  const tabOptions = ["All Machines", "Add Machine"];
-
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
+  const tabsData = [
+    {
+      label: "All Machines",
+      content: table,
+    },
+    {
+      label: "Add Machine",
+      content: form,
+    },
+  ];
 
   return (
-    <div className="bg-white p-8 rounded shadow-md">
-      <div className="flex">
+    <div className="bg-white p-8 rounded shadow-md relative">
+      <Tabs tabsData={tabsData} />
+      {/* <div className="flex">
         {tabOptions.map((option, i) => (
           <h4
             key={i}
@@ -37,7 +46,7 @@ function MachinePage() {
         </div>
       )}
 
-      {toggleState === 1 && <MachineForm />}
+      {toggleState === 1 && <MachineForm />} */}
     </div>
   );
 }
