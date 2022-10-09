@@ -36,25 +36,24 @@ function Tabs({ tabsData }) {
       </div>
 
       <motion.div
-        // key={toggleState}
-        // initial={{ height: 0 }}
-        // initial={{ height }}
-        animate={{ height }}
-        transition={{ duration: 0.3, delay: 0.01, ease: "easeOut" }}
-        // transition={{ duration: 0.3, ease: "easeOut" }}
+        animate={{ height: height || "auto" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="overflow-hidden"
       >
-        <motion.div
-          key={toggleState}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className=""
-        >
-          <div className="pt-10" ref={ref}>
-            {tabsData[toggleState].content}
-          </div>
-        </motion.div>
+        <AnimatePresence initial={false} mode="popLayout">
+          <motion.div
+            key={toggleState}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className=""
+          >
+            <div className="pt-10" ref={ref}>
+              {tabsData[toggleState].content}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
     </>
   );
