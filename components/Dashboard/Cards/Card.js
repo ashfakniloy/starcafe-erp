@@ -2,13 +2,18 @@ import Link from "next/link";
 import CountUp from "react-countup";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Card({ title, count, link }) {
   return (
     <Link href={link} passHref>
       <a>
-        <div
-          className={`bg-white min-h-[150px] px-8 py-6 gap-40 shadow-md rounded hover:scale-[1.03] ease-out hover:shadow-lg transition duration-500 group cursor-pointer`}
+        <motion.div
+          whileHover={{
+            scale: 1.03,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="bg-white min-h-[150px] px-8 py-6 gap-40 shadow-md hover:shadow-lg transition-shadow duration-300 rounded group cursor-pointer"
         >
           <div className="space-y-4">
             <h1 className="capitalize text-[15px] text-custom-indigo2 font-semibold">
@@ -29,7 +34,7 @@ function Card({ title, count, link }) {
               <FaArrowAltCircleRight />
             </div>
           </div>
-        </div>
+        </motion.div>
       </a>
     </Link>
   );
