@@ -5,13 +5,11 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 
 function Card({ title, count, link }) {
   return (
-    // <div className="bg-gradient-to-t [&:nth-child(1)]:from-violet-500 [&:nth-child(1)]:to-violet-300 [&:nth-child(2)]:from-red-500 [&:nth-child(2)]:to-red-300 [&:nth-child(3)]:from-green-500 [&:nth-child(3)]:to-green-300 [&:nth-child(4)]:from-orange-500 [&:nth-child(4)]:to-orange-300 text-white flex justify-between items-center px-8 py-6 gap-40 shadow-md hover:scale-105 hover:shadow-lg transition duration-300">
     <Link href={link} passHref>
       <a>
         <div
-          className={`bg-white min-h-[150px] px-8 py-6 gap-40 shadow-md rounded hover:scale-105 hover:shadow-lg transition duration-300 group cursor-pointer`}
+          className={`bg-white min-h-[150px] px-8 py-6 gap-40 shadow-md rounded hover:scale-[1.03] ease-out hover:shadow-lg transition duration-500 group cursor-pointer`}
         >
-          {/* <div className="text-5xl p-4 rounded-full bg-neutral-200">{icon}</div> */}
           <div className="space-y-4">
             <h1 className="capitalize text-[15px] text-custom-indigo2 font-semibold">
               {title}
